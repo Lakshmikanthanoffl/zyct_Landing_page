@@ -1,20 +1,40 @@
 <section class="hero">
-    <div class="container hero-grid">
-      <div class="slide-up">
-        <h1>Run Your Gym Smarter with Zyct</h1>
-        <p>All-in-one gym & fitness management software.</p>
+  <div class="container hero-grid">
+
+    <!-- Left Content -->
+    <div class="hero-text">
+      <h1>
+        Run Your Gym <span class="gradient-text">Smarter</span>, <br />
+        Not Harder with Zyct
+      </h1>
+
+      <p>
+        Zyct is an all-in-one gym management platform to manage members,
+        track payments, and simplify daily operations — built for modern gyms.
+      </p>
+
+      <div class="hero-actions">
         <button class="btn-primary" (click)="openDemo()">Book Free Demo</button>
+        <button class="btn-secondary">View Features</button>
       </div>
-  
-      <div class="hero-image fade-in">
-        <img
-          [src]="images[current]"
-          alt="Zyct Screenshot"
-          class="mockup-img"
-        />
-      </div>
+
+      <p class="hero-note">
+        Simple setup • Works on mobile & desktop • Free demo available
+      </p>
     </div>
-  </section>
+
+    <!-- Right Image -->
+    <div class="hero-image">
+      <img
+        [src]="images[current]"
+        alt="Zyct Dashboard"
+        class="mockup-img"
+      />
+    </div>
+
+  </div>
+</section>
+
   <!-- Overlay -->
 <div class="demo-overlay" *ngIf="showDemo" (click)="closeDemo()"></div>
 
@@ -24,8 +44,9 @@
 
     <!-- Left: Marketing / Quotes -->
     <div class="demo-left">
-      <h2>See Zyct in Action 🚀</h2>
-      <p class="tagline">Join 100+ gyms managing smarter with Zyct</p>
+      <h2>See How Top Gyms Run Smarter with Zyct 🚀</h2>
+      <p class="tagline">Book a free demo and transform your gym operations in days, not months.</p>
+      
 
       <ul class="benefits">
         <li>✅ Save 10+ hours per week</li>
