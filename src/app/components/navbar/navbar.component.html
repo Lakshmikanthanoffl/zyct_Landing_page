@@ -1,0 +1,24 @@
+<nav class="navbar">
+    <div class="container nav-wrap">
+        <div class="logo">
+            <a href="#">
+            <img src="favicon.png" alt="Zyct Logo" />
+            </a>
+          </div>
+          
+      
+      <!-- Hamburger -->
+      <button class="hamburger" (click)="toggleMenu()">
+        ☰
+      </button>
+  
+      <!-- Links -->
+      <div class="nav-links" [class.open]="menuOpen">
+        <a href="#features" (click)="toggleMenu()">Features</a>
+        <a href="#pricing" (click)="toggleMenu()">Pricing</a>
+        <a href="#contact" (click)="toggleMenu()">Contact</a>
+        <button class="btn-primary">Book Free Demo</button>
+      </div>
+    </div>
+  </nav>
+  

@@ -1,0 +1,118 @@
+<section class="hero">
+    <div class="container hero-grid">
+      <div class="slide-up">
+        <h1>Run Your Gym Smarter with Zyct</h1>
+        <p>All-in-one gym & fitness management software.</p>
+        <button class="btn-primary" (click)="openDemo()">Book Free Demo</button>
+      </div>
+  
+      <div class="hero-image fade-in">
+        <img
+          [src]="images[current]"
+          alt="Zyct Screenshot"
+          class="mockup-img"
+        />
+      </div>
+    </div>
+  </section>
+  <!-- Overlay -->
+<div class="demo-overlay" *ngIf="showDemo" (click)="closeDemo()"></div>
+
+<!-- Slide-in Demo Panel -->
+<div class="demo-panel" [class.open]="showDemo">
+  <div class="demo-content">
+
+    <!-- Left: Marketing / Quotes -->
+    <div class="demo-left">
+      <h2>See Zyct in Action 🚀</h2>
+      <p class="tagline">Join 100+ gyms managing smarter with Zyct</p>
+
+      <ul class="benefits">
+        <li>✅ Save 10+ hours per week</li>
+        <li>✅ Track members & payments easily</li>
+        <li>✅ Grow your gym with insights</li>
+        <li>✅ Simple setup, no tech headache</li>
+      </ul>
+
+      <div class="quote">
+        “Zyct helped us manage 3 branches smoothly in 1 week.”  
+        <span>— Fitness Studio Owner</span>
+      </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="demo-right">
+      <button class="close-btn" (click)="closeDemo()">✕</button>
+
+      <h3>Book Your Free Demo</h3>
+
+      <form #demoForm="ngForm" (ngSubmit)="sendDemoRequest(demoForm)">
+
+        <input
+          type="text"
+          placeholder="Full Name"
+          [(ngModel)]="formData.name"
+          name="name"
+          required
+          #name="ngModel"
+        />
+        <div class="error" *ngIf="name.invalid && (name.touched || demoForm.submitted)">
+          Full name is required
+        </div>
+      
+        <input
+          type="email"
+          placeholder="Email Address"
+          [(ngModel)]="formData.email"
+          name="email"
+          required
+          email
+          #email="ngModel"
+        />
+        <div class="error" *ngIf="email.invalid && (email.touched || demoForm.submitted)">
+          Please enter a valid email
+        </div>
+      
+        <input
+          type="text"
+          placeholder="Phone Number"
+          [(ngModel)]="formData.phone"
+          name="phone"
+          required
+          minlength="8"
+          #phone="ngModel"
+        />
+        <div class="error" *ngIf="phone.invalid && (phone.touched || demoForm.submitted)">
+          Please enter a valid phone number
+        </div>
+      
+        <input
+          type="text"
+          placeholder="Gym / Company Name"
+          [(ngModel)]="formData.company"
+          name="company"
+          required
+          #company="ngModel"
+        />
+        <div class="error" *ngIf="company.invalid && (company.touched || demoForm.submitted)">
+          Company / Gym name is required
+        </div>
+      
+        <button
+          type="submit"
+          class="btn-primary full"
+          [disabled]="loading"
+        >
+          Get Demo
+        </button>
+      
+      </form>
+      
+      
+      
+    </div>
+
+  </div>
+</div>
+
+  
