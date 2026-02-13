@@ -79,10 +79,11 @@
 
 /* Buttons */
 .btn-secondary {
+  text-decoration: none;
   background: transparent;
   border: 1px solid #5b8cff;
   color: #5b8cff;
-  padding: 12px 22px;
+  padding: 8px 18px;
   border-radius: 8px;
   cursor: pointer;
 }
