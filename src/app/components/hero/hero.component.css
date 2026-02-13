@@ -2,16 +2,16 @@
    HERO SECTION
 ========================= */
 .hero {
-  min-height: 100svh;
+  min-height: calc(100vh - 64px); /* account for navbar if any */
   display: flex;
   align-items: center;
-  padding: 80px 20px;
   background: radial-gradient(ellipse at right, #1b2b5a 0%, #050914 60%);
   color: #fff;
-  position: relative;
-  overflow: hidden;
+  padding: 96px 20px 64px;  /* ⬅️ more bottom padding */
   box-sizing: border-box;
+  overflow: visible;       /* ⬅️ IMPORTANT: don't clip text */
 }
+
 
 .container {
   max-width: 1200px;
