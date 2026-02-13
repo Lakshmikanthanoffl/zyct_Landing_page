@@ -14,7 +14,9 @@ import { ToastService } from '../../services/toast.service';
 export class HeroComponent {
   images = [
     'dashboard.png',
-    'members.png'
+    'members.png',
+    'plans.png',
+    'payment.png'
   ];
   current = 0;
   showDemo = false;
