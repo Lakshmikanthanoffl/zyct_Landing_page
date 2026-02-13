@@ -1,3 +1,14 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+#features, #pricing, #contact {
+  scroll-margin-top: 56px;
+}
+
 * {
     box-sizing: border-box;
   }

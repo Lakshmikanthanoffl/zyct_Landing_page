@@ -1,71 +1,91 @@
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(5, 9, 20, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
 .nav-wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;              /* 🔥 FIXED HEIGHT = NO GAP */
+  padding: 0 16px;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.logo img {
+  height: 60px;              /* 🔥 SMALL & CLEAN */
+  width: auto;
+  display: block;
+}
+
+.logo span {
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: #cfd8ff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
   .hamburger {
-    display: none;
-    font-size: 26px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  
-  /* Mobile */
-  @media (max-width: 768px) {
-    .hamburger {
-      display: block;
-    }
-  
-    .nav-links {
-      position: absolute;
-      top: 64px;
-      left: 0;
-      right: 0;
-      background: #020617;
-      flex-direction: column;
-      gap: 16px;
-      padding: 20px;
-      display: none;
-    }
-  
-    .nav-links.open {
-      display: flex;
-    }
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: #fff;
-    font-weight: 700;
-    font-size: 20px;
-  }
-  
-  .logo img {
-    height: 80px;   /* 👈 Increase size (try 40px–56px) */
-    width: auto;
     display: block;
   }
-  
-  
-  /* Mobile tweak */
-  @media (max-width: 768px) {
-    .logo img {
-        height: 80px;
-      }
-  
-    .logo span {
-      font-size: 18px;
-    }
+
+  .nav-links {
+    position: absolute;
+    top: 56px;                 /* 🔥 MATCH NAV HEIGHT */
+    left: 0;
+    right: 0;
+    background: #020617;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    display: none;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  .logo span {
-    background: linear-gradient(90deg, #60a5fa, #a78bfa, #22d3ee);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
+  .nav-links.open {
+    display: flex;
   }
-    
-  
+}
