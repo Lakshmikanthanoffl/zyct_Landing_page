@@ -1,71 +1,138 @@
 .pricing {
-    padding: 100px 20px;
-    position: relative;
-    overflow: hidden;
-  }
-  body {
-    margin: 0;
-    background: #050914;
-  }
-  
-  .hero,
-  .pricing {
-    margin: 0;
-  }
-  
-      
-  .pricing h2 {
-    text-align: center;
-    font-size: 40px;
-    margin-bottom: 48px;
-    background: linear-gradient(90deg, #60a5fa, #a78bfa, #22d3ee);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .pricing-card {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 32px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #fff;
-  }
-  
-  .pricing-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-  }
-  .pricing-card.featured {
-    border: 2px solid #5b8cff;
-    box-shadow: 0 0 0 1px rgba(91,140,255,0.3), 0 30px 80px rgba(91,140,255,0.25);
-  }
-  .pricing-card button {
-    background: linear-gradient(135deg, #3b82f6, #7c3aed);
-    border: none;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 600;
-  }
-  
-  .pricing-card button:hover {
-    opacity: 0.9;
-  }
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+body {
+  background: #050914;
+}
+
+/* Title */
+.pricing h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+.pricing-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 56px;
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.85;
+  color: #cfd8ff;
+}
+
+/* Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card */
+.pricing-card {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.10),
+    rgba(255, 255, 255, 0.04)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 32px;
+  text-align: left;
+  color: #fff;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+/* Hover */
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.6);
+  border-color: rgba(91, 140, 255, 0.6);
+}
+
+/* Featured (Popular) */
+.pricing-card.featured {
+  border: 2px solid #facc15;
+  box-shadow:
+    0 0 0 1px rgba(250, 204, 21, 0.4),
+    0 30px 80px rgba(250, 204, 21, 0.25);
+}
+
+/* Popular badge */
+.pricing-card .badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #facc15;
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+/* Plan name */
+.pricing-card h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+/* Description */
+.plan-desc {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+/* Feature list */
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+
+.plan-features li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Button */
+.pricing-card button,
+.pricing-card .btn-primary {
+  width: 100%;
+  background: linear-gradient(135deg, #3b82f6, #7c3aed);
+  border: none;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.pricing-card button:hover,
+.pricing-card .btn-primary:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
   .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    max-width: 1100px;
-    margin: 0 auto;
+    grid-template-columns: 1fr;
   }
-  
-  @media (max-width: 900px) {
-    .pricing-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-        
+}

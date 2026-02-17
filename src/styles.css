@@ -1,13 +1,30 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
+
 html {
   scroll-behavior: smooth;
 }
-#features, #pricing, #contact {
-  scroll-margin-top: 56px;
+/* Mobile only */
+@media (max-width: 768px) {
+  #features {
+    scroll-margin-top: 20px;  /* height of navbar on mobile */
+  }
+  #pricing {
+    scroll-margin-top: -50px;  /* height of navbar on mobile */
+  }
+  #contact {
+    scroll-margin-top: 10px;  /* height of navbar on mobile */
+  }
 }
+
+/* Desktop */
+@media (min-width: 769px) {
+  #features {
+    scroll-margin-top: -10px;  /* smaller offset for desktop navbar */
+  }
+  #pricing {
+    scroll-margin-top: -55px;  /* smaller offset for desktop navbar */
+  }
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -25,7 +42,6 @@ html {
   }
   
   body {
-    margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
     color: #0f172a;
     background: #ffffff;
@@ -188,7 +204,12 @@ html {
     text-align: center;
     padding: 72px 0;
   }
-  
+  #features {
+    background: #020617;
+    color: #fff;
+    text-align: center;
+    padding: 72px 0;
+  }
   .cta h2 {
     margin-bottom: 20px;
   }

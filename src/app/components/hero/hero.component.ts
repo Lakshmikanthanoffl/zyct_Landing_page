@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { LoaderService } from '../../services/loader.service';
 import { ToastService } from '../../services/toast.service';
 import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.directive';
+import { ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-hero',
   standalone: true,
@@ -13,6 +16,8 @@ import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.direc
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent {
+  @ViewChild('demoForm') demoForm!: NgForm;
+ 
   images = [
     'dashboard.png',
     'members.png',
@@ -42,7 +47,21 @@ export class HeroComponent {
   
   closeDemo() {
     this.showDemo = false;
+  
+    // Clear model
+    this.formData = {
+      name: '',
+      email: '',
+      phone: '',
+      company: ''
+    };
+  
+    // Reset form state (touched, errors, etc.)
+    if (this.demoForm) {
+      this.demoForm.resetForm();
+    }
   }
+  
   sendDemoRequest(form: any) {
 
     if (form.invalid) {

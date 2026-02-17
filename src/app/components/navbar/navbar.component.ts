@@ -4,6 +4,9 @@ import { ToastService } from '../../services/toast.service';
 import emailjs from 'emailjs-com';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-navbar',
   imports: [CommonModule,FormsModule],
@@ -12,6 +15,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  @ViewChild('demoForm') demoForm!: NgForm;
+ 
   menuOpen = false;
   current = 0;
   showDemo = false;
@@ -32,6 +37,19 @@ export class NavbarComponent {
   
   closeDemo() {
     this.showDemo = false;
+  
+    // Clear model
+    this.formData = {
+      name: '',
+      email: '',
+      phone: '',
+      company: ''
+    };
+  
+    // Reset form state (touched, errors, etc.)
+    if (this.demoForm) {
+      this.demoForm.resetForm();
+    }
   }
   sendDemoRequest(form: any) {
 

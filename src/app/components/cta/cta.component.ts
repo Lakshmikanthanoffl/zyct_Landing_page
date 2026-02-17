@@ -5,6 +5,9 @@ import emailjs from 'emailjs-com';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.directive';
+import { ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-cta',
   imports: [CommonModule,FormsModule,RevealOnScrollDirective],
@@ -13,6 +16,8 @@ import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.direc
   styleUrls: ['./cta.component.css']
 })
 export class CtaComponent {
+  @ViewChild('demoForm') demoForm!: NgForm;
+ 
   current = 0;
   showDemo = false;
   formData = {
@@ -29,6 +34,19 @@ export class CtaComponent {
   
   closeDemo() {
     this.showDemo = false;
+  
+    // Clear model
+    this.formData = {
+      name: '',
+      email: '',
+      phone: '',
+      company: ''
+    };
+  
+    // Reset form state (touched, errors, etc.)
+    if (this.demoForm) {
+      this.demoForm.resetForm();
+    }
   }
   sendDemoRequest(form: any) {
 
