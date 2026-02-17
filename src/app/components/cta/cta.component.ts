@@ -4,9 +4,10 @@ import { ToastService } from '../../services/toast.service';
 import emailjs from 'emailjs-com';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.directive';
 @Component({
   selector: 'app-cta',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,RevealOnScrollDirective],
   standalone: true,
   templateUrl: './cta.component.html',
   styleUrls: ['./cta.component.css']

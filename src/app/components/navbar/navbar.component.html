@@ -1,58 +1,60 @@
 <nav class="navbar">
   <div class="container nav-wrap">
-    <a href="#">
-    <div class="logo">
+    <a href="#" class="logo">
       <img src="favicon.png" alt="Zyct Logo" />
-      <!-- <span>Zyct</span> -->
-    </div>
-  </a>
+    </a>
 
-    <!-- Hamburger -->
-    <button class="hamburger" (click)="toggleMenu()">☰</button>
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger" (click)="toggleMenu()" aria-label="Toggle menu">
+      ☰
+    </button>
 
     <!-- Links -->
     <div class="nav-links" [class.open]="menuOpen">
       <a href="#features" (click)="toggleMenu()">Features</a>
       <a href="#pricing" (click)="toggleMenu()">Pricing</a>
       <a href="#contact" (click)="toggleMenu()">Contact</a>
-      <button class="btn-primary" (click)="openDemo()">Book Free Demo</button>
+      <button class="btn-primary nav-cta" (click)="openDemo()">Book Free Demo</button>
     </div>
   </div>
 </nav>
-  <!-- Overlay -->
-  <div class="demo-overlay" *ngIf="showDemo" (click)="closeDemo()"></div>
+<!-- Overlay -->
+<div class="demo-overlay" *ngIf="showDemo" (click)="closeDemo()"></div>
 
-  <!-- Slide-in Demo Panel -->
-  <div class="demo-panel" [class.open]="showDemo">
-    <div class="demo-content">
-  
-      <!-- Left: Marketing / Quotes -->
-      <div class="demo-left">
-        <h2>See How Top Gyms Run Smarter with Zyct 🚀</h2>
-        <p class="tagline">Book a free demo and transform your gym operations in days, not months.</p>
-        
-  
-        <ul class="benefits">
-          <li>✅ Save 10+ hours per week</li>
-          <li>✅ Track members & payments easily</li>
-          <li>✅ Grow your gym with insights</li>
-          <li>✅ Simple setup, no tech headache</li>
-        </ul>
-  
-        <div class="quote">
-          “Zyct helped us manage 3 branches smoothly in 1 week.”  
-          <span>— Fitness Studio Owner</span>
-        </div>
+<!-- Slide-in Demo Panel -->
+<div class="demo-panel" [class.open]="showDemo">
+  <div class="demo-content">
+
+    <!-- Left: Marketing -->
+    <div class="demo-left">
+      <h2>See How Top Gyms Run Smarter with Zyct 🚀</h2>
+      <p class="tagline">
+        Book a free demo and transform your gym operations in days, not months.
+      </p>
+
+      <ul class="benefits">
+        <li>✅ Save 10+ hours per week</li>
+        <li>✅ Track members & payments easily</li>
+        <li>✅ Grow your gym with insights</li>
+        <li>✅ Simple setup, no tech headache</li>
+      </ul>
+
+      <div class="quote">
+        “Zyct helped us manage 3 branches smoothly in 1 week.”  
+        <span>— Fitness Studio Owner</span>
       </div>
-  
-      <!-- Right: Form -->
-      <div class="demo-right">
-        <button class="close-btn" (click)="closeDemo()">✕</button>
-  
-        <h3>Book Your Free Demo</h3>
-  
-        <form #demoForm="ngForm" (ngSubmit)="sendDemoRequest(demoForm)">
-  
+    </div>
+
+    <!-- Right: Form -->
+    <div class="demo-right">
+      <button class="close-btn" (click)="closeDemo()" aria-label="Close">✕</button>
+
+      <h3>Book Your Free Demo</h3>
+      <p class="form-subtitle">No spam. We’ll only contact you about Zyct.</p>
+
+      <form #demoForm="ngForm" (ngSubmit)="sendDemoRequest(demoForm)">
+
+        <div class="form-group">
           <input
             type="text"
             placeholder="Full Name"
@@ -64,7 +66,9 @@
           <div class="error" *ngIf="name.invalid && (name.touched || demoForm.submitted)">
             Full name is required
           </div>
-        
+        </div>
+
+        <div class="form-group">
           <input
             type="email"
             placeholder="Email Address"
@@ -77,7 +81,9 @@
           <div class="error" *ngIf="email.invalid && (email.touched || demoForm.submitted)">
             Please enter a valid email
           </div>
-        
+        </div>
+
+        <div class="form-group">
           <input
             type="text"
             placeholder="Phone Number"
@@ -90,7 +96,9 @@
           <div class="error" *ngIf="phone.invalid && (phone.touched || demoForm.submitted)">
             Please enter a valid phone number
           </div>
-        
+        </div>
+
+        <div class="form-group">
           <input
             type="text"
             placeholder="Gym / Company Name"
@@ -102,20 +110,18 @@
           <div class="error" *ngIf="company.invalid && (company.touched || demoForm.submitted)">
             Company / Gym name is required
           </div>
-        
-          <button
-            type="submit"
-            class="btn-primary full"
-            [disabled]="loading"
-          >
-            Get Demo
-          </button>
-        
-        </form>
-        
-        
-        
-      </div>
-  
+        </div>
+
+        <button
+          type="submit"
+          class="btn-primary full"
+          [disabled]="loading"
+        >
+          {{ loading ? 'Submitting...' : 'Get Demo' }}
+        </button>
+
+      </form>
     </div>
+
   </div>
+</div>

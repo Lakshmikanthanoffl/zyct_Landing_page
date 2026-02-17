@@ -4,10 +4,11 @@ import emailjs from 'emailjs-com';
 import { FormsModule } from '@angular/forms';
 import { LoaderService } from '../../services/loader.service';
 import { ToastService } from '../../services/toast.service';
+import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.directive';
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule,FormsModule],   // 👈 THIS IS IMPORTANT
+  imports: [CommonModule,FormsModule,RevealOnScrollDirective],   // 👈 THIS IS IMPORTANT
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css']
 })

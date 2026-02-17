@@ -8,6 +8,17 @@ html {
 #features, #pricing, #contact {
   scroll-margin-top: 56px;
 }
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 * {
     box-sizing: border-box;
@@ -19,7 +30,25 @@ html {
     color: #0f172a;
     background: #ffffff;
   }
+  section {
+    scroll-margin-top: 80px; /* adjust to your navbar height */
+  }
+  #pricing {
+    padding: 120px 0;
+  }
+  #features {
+    padding: 220px 0;
+  }
   
+  #cta {
+    padding: 120px 0;
+  }
+  #hero {
+    padding: 120px 0;
+  }
+  #footer {
+    padding: 120px 0;
+  }
   /* Containers */
   .container {
     width: 100%;
