@@ -44,8 +44,7 @@
   }
   
   
-  /* Mobile / touch devices: simple, clean highlight */
-@media (hover: none) and (pointer: coarse) {
+
 
 
   .why-card {
@@ -70,7 +69,7 @@
     box-shadow: 0 22px 56px rgba(0,0,0,0.45);
     border-color: rgba(91, 140, 255, 0.6);
   }
-}
+
 
   /* Desktop only: rich premium hover */
 @media (hover: hover) and (pointer: fine) {
