@@ -126,7 +126,7 @@
   
   /* Hover effect */
   .feature-card:hover {
-    transform: translateY(-6px);
+   
     box-shadow: 0 22px 56px rgba(0,0,0,0.45);
    
   }
