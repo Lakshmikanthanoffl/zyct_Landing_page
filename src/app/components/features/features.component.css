@@ -106,7 +106,7 @@
 }
 
 
-@media (hover: none) and (pointer: coarse) {
+
   .feature-card {
     background: linear-gradient(
       180deg,
@@ -129,7 +129,7 @@
     box-shadow: 0 22px 56px rgba(0,0,0,0.45);
     border-color: rgba(91, 140, 255, 0.6);
   }
-}
+
 
 /* Desktop only hover effects */
 @media (hover: hover) and (pointer: fine) {
