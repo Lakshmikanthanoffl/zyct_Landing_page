@@ -44,6 +44,37 @@
   }
   
   
+  /* Mobile / touch devices: simple, clean highlight */
+@media (hover: none) and (pointer: coarse) {
+
+
+  .why-card {
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.10),
+      rgba(255,255,255,0.04)
+    );
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    padding: 28px;
+    text-align: left;
+    color: #fff;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.28);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+  
+  /* Hover effect */
+  .why-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 56px rgba(0,0,0,0.45);
+    border-color: rgba(91, 140, 255, 0.6);
+  }
+}
+
+  /* Desktop only: rich premium hover */
+@media (hover: hover) and (pointer: fine) {
+
   .why-card:hover {
     transform: translateY(-6px);
     box-shadow: 
@@ -51,6 +82,7 @@
       0 0 0 1px rgba(167,139,250,0.35);
     border-color: rgba(167,139,250, 0.7);
   }
+
   .why-card::before {
     content: "";
     position: absolute;
@@ -67,23 +99,22 @@
     transition: opacity 0.4s ease, transform 0.6s ease;
     pointer-events: none;
   }
-  
+
   .why-card:hover::before {
     opacity: 1;
     transform: translateX(0%);
   }
-    
+
   .why-card .icon {
-    font-size: 28px;
-    margin-bottom: 12px;
     transition: transform 0.35s ease, filter 0.35s ease;
   }
-  
+
   .why-card:hover .icon {
     transform: translateY(-2px) scale(1.08);
     filter: drop-shadow(0 6px 14px rgba(167,139,250,0.6));
   }
-      
+}
+    
   .why-card .icon {
     font-size: 28px;
     margin-bottom: 12px;
