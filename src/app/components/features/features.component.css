@@ -23,6 +23,8 @@
 .delay-4 { transition-delay: 0.24s; }
 .delay-5 { transition-delay: 0.30s; }
 .delay-6 { transition-delay: 0.36s; }
+.delay-7 { transition-delay: 0.42s; }
+.delay-8 { transition-delay: 0.48s; }
 
 /* =========================
    FEATURES TEXT
@@ -56,6 +58,9 @@
 }
 
 .feature-card {
+  position: relative;
+  overflow: hidden;
+
   background: linear-gradient(
     180deg,
     rgba(255,255,255,0.10),
@@ -68,15 +73,50 @@
   color: #fff;
   backdrop-filter: blur(10px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.28);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+
+  transition: 
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s ease;
 }
 
-/* Hover effect */
+
 .feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 56px rgba(0,0,0,0.45);
-  border-color: rgba(91, 140, 255, 0.6);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 
+    0 28px 70px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(96,165,250,0.35);
+  border-color: rgba(96,165,250, 0.8);
 }
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(96,165,250,0.15),
+    rgba(167,139,250,0.15),
+    transparent 80%
+  );
+  opacity: 0;
+  transform: translateX(-40%);
+  transition: opacity 0.4s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.feature-card:hover .feature-icon {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.feature-icon {
+  transition: transform 0.35s ease;
+}
+
 
 /* Optional: icon spacing if you use icons */
 .feature-icon {

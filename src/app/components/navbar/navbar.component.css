@@ -29,7 +29,7 @@
 }
 
 .logo img {
-  height: 40px; /* balanced size */
+  height: 70px; /* balanced size */
   width: auto;
   display: block;
 }
@@ -118,6 +118,42 @@
     transform: translateY(0);
     padding: 24px 20px;
   }
+}
+/* Navbar CTA – more subtle, premium */
+.nav-cta {
+  position: relative;
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  color: #fff;
+
+  box-shadow: 
+    0 6px 20px rgba(96,165,250,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+
+  transition: 
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+/* Hover: small lift + sharper glow */
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 30px rgba(96,165,250,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+  filter: brightness(1.05);
+}
+
+/* Click (active) feel */
+.nav-cta:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 6px 18px rgba(96,165,250,0.35),
+    inset 0 2px 6px rgba(0,0,0,0.25);
 }
 
 

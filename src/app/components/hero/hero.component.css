@@ -90,6 +90,101 @@
     justify-content: center;
   }
 }
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: 
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(96,165,250,0.35);
+}
+
+/* Hover = lift + stronger glow */
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 18px 50px rgba(96,165,250,0.55);
+}
+
+/* Subtle pulse to attract attention */
+.btn-primary {
+  animation: ctaPulse 2.5s ease-in-out infinite;
+}
+.cta-badge {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  box-shadow: 0 6px 18px rgba(239,68,68,0.35);
+}
+.hero-cta {
+  position: relative;
+  padding: 14px 32px;
+  font-size: 16px;
+  border-radius: 14px;
+
+  box-shadow: 0 14px 40px rgba(96,165,250,0.45);
+  animation: heroPulse 2.6s ease-in-out infinite;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 22px 60px rgba(96,165,250,0.65);
+}
+
+/* Subtle attention pulse */
+@keyframes heroPulse {
+  0%, 100% {
+    box-shadow: 0 14px 40px rgba(96,165,250,0.45);
+  }
+  50% {
+    box-shadow: 0 20px 55px rgba(96,165,250,0.7);
+  }
+}
+.cta-helper {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #a1a1aa;
+}
+
+@keyframes ctaPulse {
+  0%, 100% {
+    box-shadow: 0 10px 30px rgba(96,165,250,0.35);
+  }
+  50% {
+    box-shadow: 0 14px 40px rgba(96,165,250,0.55);
+  }
+}
+
+
+
+.btn-secondary {
+  position: relative;
+  transition: 
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+/* Add arrow */
+.btn-secondary::after {
+  content: " →";
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateX(-4px);
+}
+
+/* Hover effect */
+.btn-secondary:hover {
+  transform: translateY(-2px);
+}
+
+.btn-secondary:hover::after {
+  opacity: 1;
+  transform: translateX(4px);
+}
 
 .hero-note {
   font-size: 14px;
