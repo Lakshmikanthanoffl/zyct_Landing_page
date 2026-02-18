@@ -8,11 +8,12 @@ import { HeroComponent } from "./components/hero/hero.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { GlobalLoaderComponent } from "./components/global-loader/global-loader.component";
 import { GlobalToastComponent } from "./components/global-toast/global-toast.component";
+import { WhyZyctComponent } from "./why-zyct/why-zyct.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FooterComponent, CtaComponent, PricingComponent, FeaturesComponent, HeroComponent, NavbarComponent, GlobalLoaderComponent, GlobalToastComponent],
+  imports: [FooterComponent, CtaComponent, PricingComponent, FeaturesComponent, HeroComponent, NavbarComponent, GlobalLoaderComponent, GlobalToastComponent, WhyZyctComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -72,6 +72,25 @@
   margin-bottom: 16px;
 }
 
+.hero-trust {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #a1a1aa;
+}
+
+.hero-trust img {
+  height: 20px;
+  opacity: 0.9;
+}
+@media (max-width: 768px) {
+  .hero-trust {
+    justify-content: center;
+  }
+}
+
 .hero-note {
   font-size: 14px;
   color: #9fb0ff;

@@ -1,66 +1,74 @@
-<section id="pricing" class="pricing reveal" revealOnScroll>
-  <div class="container">
-    <h2>Plans built for every gym</h2>
-    <p class="pricing-subtitle">
-      Choose the plan that fits your gym. Book a demo to see features, pricing, and setup in detail.
-    </p>
-
-    <div class="pricing-grid">
-      <!-- Basic -->
-      <div class="pricing-card reveal delay-1" revealOnScroll>
-        <h3>Basic</h3>
-        <p class="plan-desc">Perfect to get started with simple gym management.</p>
-
-        <ul class="plan-features">
-          <li>✔ Member management</li>
-          <li>✔ Plans & subscriptions</li>
-          <li>✔ Basic reports</li>
-          <li>✔ Simple attendance tracking</li>
-          <li>✔ Email & WhatsApp reminders</li>
-        </ul>
-
-        <button class="btn-primary full" (click)="openDemo()">Book Free Demo</button>
+<section id="why-zyct" class="why-zyct reveal" revealOnScroll>
+    <div class="container">
+        <h2>
+            Why Gym Owners Choose 
+            <span class="hand-underline">Zyct</span>
+          </h2>
+          
+          
+          
+          
+          
+  
+      <p class="subtitle">
+        Running a gym is hard. Managing it shouldn’t be. 
+        Zyct gives you everything you need to stay organized, save time, and grow with confidence.
+      </p>
+  
+      <div class="why-grid">
+  
+        <div class="why-card">
+          <div class="icon">⚡</div>
+          <h3>Built for Real Gym Operations</h3>
+          <p>Designed specifically for daily gym work — not generic business software.</p>
+        </div>
+  
+        <div class="why-card">
+          <div class="icon">📱</div>
+          <h3>Access Anywhere</h3>
+          <p>Manage members, payments, and reports from your phone or desktop anytime.</p>
+        </div>
+  
+        <div class="why-card">
+          <div class="icon">🧠</div>
+          <h3>Simple for You and Your Staff</h3>
+          <p>No complicated training. Your team can start using Zyct from day one.</p>
+        </div>
+  
+        <div class="why-card">
+            <div class="icon">💳</div>
+            <h3>Secure, Built-in Payments</h3>
+            <p>
+              Pay Zyct directly through a secure payment gateway with automatic billing —
+              no manual payments, no follow-ups, no hassle.
+            </p>
+          
+            <div class="payment-trust">
+              <span>Powered by</span>
+              <img src="razorpay-logo.png" alt="Razorpay Secure Payments" />
+            </div>
+          </div>
+          
+  
       </div>
-
-      <!-- Advanced (Popular) -->
-      <div class="pricing-card featured reveal delay-2" revealOnScroll>
-        <div class="badge">Popular</div>
-        <h3>Advanced</h3>
-        <p class="plan-desc">Best for gyms that want full control and automation.</p>
-
-        <ul class="plan-features">
-          <li>✔ Smart dashboard & insights</li>
-          <li>✔ Full member management</li>
-          <li>✔ Personalized plans</li>
-          <li>✔ QR & manual attendance</li>
-          <li>✔ Reports & exports</li>
-          <li>✔ Payment reminders & notifications</li>
-          <li>✔ Complete subscription control</li>
-        </ul>
-
-        <button class="btn-primary full" (click)="openDemo()">Book Free Demo</button>
+  
+      <!-- Mini CTA Message -->
+      <div class="why-cta-text">
+        <p>
+          Join gym owners who are simplifying their operations and payments with Zyct.
+        </p>
       </div>
-
-      <!-- Premium -->
-      <div class="pricing-card reveal delay-3" revealOnScroll>
-        <h3>Premium</h3>
-        <p class="plan-desc">For gyms that want advanced features and priority support.</p>
-
-        <ul class="plan-features">
-          <li>✔ Advanced analytics & insights</li>
-          <li>✔ Complete operations control</li>
-          <li>✔ QR attendance with accuracy</li>
-          <li>✔ Custom reports & plans</li>
-          <li>✔ Priority support</li>
-          <li>✔ Reminders via SMS, calls, and email</li>
-        </ul>
-
-        <button class="btn-primary full" (click)="openDemo()">Book Free Demo</button>
+  
+      <!-- Main CTA Button -->
+      <div class="why-cta">
+        <button class="btn-primary" (click)="openDemo()">
+          Book Your Free Demo
+        </button>
       </div>
+  
     </div>
-  </div>
-</section>
-<!-- Overlay -->
+  </section>
+  <!-- Overlay -->
 <div class="demo-overlay" *ngIf="showDemo" (click)="closeDemo()"></div>
 
 <!-- Slide-in Demo Panel -->

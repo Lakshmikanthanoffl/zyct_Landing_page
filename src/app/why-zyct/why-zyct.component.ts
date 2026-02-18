@@ -1,20 +1,19 @@
 import { Component } from '@angular/core';
-import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.directive';
-import { LoaderService } from '../../services/loader.service';
-import { ToastService } from '../../services/toast.service';
+import { RevealOnScrollDirective } from '../directives/reveal-on-scroll.directive';
+import { LoaderService } from '../services/loader.service';
+import { ToastService } from '../services/toast.service';
 import emailjs from 'emailjs-com';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 @Component({
-  selector: 'app-footer',
+  selector: 'app-why-zyct',
   imports: [CommonModule,FormsModule,RevealOnScrollDirective],
-  standalone: true,
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+  templateUrl: './why-zyct.component.html',
+  styleUrl: './why-zyct.component.css'
 })
-export class FooterComponent {
+export class WhyZyctComponent {
   @ViewChild('demoForm') demoForm!: NgForm;
  
   current = 0;

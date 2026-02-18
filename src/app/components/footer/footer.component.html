@@ -1,18 +1,23 @@
 <footer id="contact" class="footer reveal" revealOnScroll>
   <div class="container footer-grid">
 
-    <!-- Brand + About -->
+    <!-- Brand -->
     <div class="footer-brand">
       <div class="brand-row">
         <img src="favicon.png" alt="Zyct Logo" />
         <span class="brand-name">Zyct</span>
       </div>
+
       <p class="brand-desc">
         Zyct helps gyms manage members, payments, and daily operations in one simple platform.
         Built for modern fitness businesses.
       </p>
 
-      <!-- Social Icons -->
+      <!-- Footer CTA -->
+      <button class="btn-primary small" (click)="openDemo()">
+        Book Your Free Demo
+      </button>
+
       <div class="social-links">
         <a href="#" aria-label="Instagram" title="Instagram">📸</a>
         <a href="#" aria-label="LinkedIn" title="LinkedIn">💼</a>
@@ -27,7 +32,6 @@
       <ul>
         <li><a href="#features">Features</a></li>
         <li><a href="#pricing">Pricing</a></li>
-        <!-- <li><a href="#" (click)="openDemo()">Book Demo</a></li> -->
         <li><a href="#">Roadmap</a></li>
       </ul>
     </div>
@@ -47,7 +51,11 @@
     <div class="footer-col">
       <h4>Support</h4>
       <ul>
-        <!-- <li><a href="mailto:support@zyct.in">support@zyct.in</a></li> -->
+        <li>
+          <a href="mailto:zyct.official&#64;gmail.com">
+            zyct.official&#64;gmail.com
+          </a>
+        </li>
         <li><a href="#">Help Center</a></li>
         <li><a href="#">Contact Support</a></li>
         <li><a href="#">Privacy Policy</a></li>
@@ -57,8 +65,114 @@
 
   </div>
 
-  <!-- Bottom -->
   <div class="footer-bottom">
     <p>© 2026 Zyct. All rights reserved.</p>
   </div>
 </footer>
+<!-- Overlay -->
+<div class="demo-overlay" *ngIf="showDemo" (click)="closeDemo()"></div>
+
+<!-- Slide-in Demo Panel -->
+<div class="demo-panel" [class.open]="showDemo">
+  <div class="demo-content">
+
+    <div class="demo-left">
+      <h2>Simple Gym Management. Made for Busy Gym Owners. 💪</h2>
+      <p class="tagline">
+        Zyct helps you manage members, payments, and daily operations in one simple place.
+        Spend less time on admin, more time growing your gym.
+      </p>
+    
+      <ul class="benefits">
+        <li>✅ Member & payment records in one place</li>
+        <li>✅ Save time on daily operations</li>
+        <li>✅ Easy to use, no training needed</li>
+        <li>✅ Works on mobile & desktop</li>
+      </ul>
+    
+      <div class="quote">
+        🎁 <strong>Early Access</strong><br />
+        Join early and get priority support and special launch benefits.
+      </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="demo-right">
+      <button class="close-btn" (click)="closeDemo()" aria-label="Close">✕</button>
+
+      <h3>Book Your Free Demo</h3>
+      <p class="form-subtitle">No spam. We’ll only contact you about Zyct.</p>
+
+      <form #demoForm="ngForm" (ngSubmit)="sendDemoRequest(demoForm)">
+
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="Full Name"
+            [(ngModel)]="formData.name"
+            name="name"
+            required
+            #name="ngModel"
+          />
+          <div class="error" *ngIf="name.invalid && (name.touched || demoForm.submitted)">
+            Full name is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input
+            type="email"
+            placeholder="Email Address"
+            [(ngModel)]="formData.email"
+            name="email"
+            required
+            email
+            #email="ngModel"
+          />
+          <div class="error" *ngIf="email.invalid && (email.touched || demoForm.submitted)">
+            Please enter a valid email
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="Phone Number"
+            [(ngModel)]="formData.phone"
+            name="phone"
+            required
+            minlength="8"
+            #phone="ngModel"
+          />
+          <div class="error" *ngIf="phone.invalid && (phone.touched || demoForm.submitted)">
+            Please enter a valid phone number
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="Gym / Company Name"
+            [(ngModel)]="formData.company"
+            name="company"
+            required
+            #company="ngModel"
+          />
+          <div class="error" *ngIf="company.invalid && (company.touched || demoForm.submitted)">
+            Company / Gym name is required
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn-primary full"
+          [disabled]="loading"
+        >
+          {{ loading ? 'Submitting...' : 'Get Demo' }}
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</div>
