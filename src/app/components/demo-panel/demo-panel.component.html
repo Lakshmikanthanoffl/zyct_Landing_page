@@ -5,103 +5,97 @@
 <div class="demo-panel" [class.open]="showDemo$ | async">
   <div class="demo-content">
 
+    <!-- Left: Marketing (desktop only) -->
     <div class="demo-left">
       <h2>Simple Gym Management. Made for Busy Gym Owners.</h2>
       <p class="tagline">
         Zyct helps you manage members, payments, and daily operations in one simple place.
         Spend less time on admin, more time growing your gym.
       </p>
-    
+
       <ul class="benefits">
-        <li><span class="benefit-icon">✓</span> Member & payment records in one place</li>
-        <li><span class="benefit-icon">✓</span> Save time on daily operations</li>
-        <li><span class="benefit-icon">✓</span> Easy to use, no training needed</li>
-        <li><span class="benefit-icon">✓</span> Works on mobile & desktop</li>
+        <li><span class="benefit-icon">&#10003;</span> Member &amp; payment records in one place</li>
+        <li><span class="benefit-icon">&#10003;</span> Save time on daily operations</li>
+        <li><span class="benefit-icon">&#10003;</span> Easy to use, no training needed</li>
+        <li><span class="benefit-icon">&#10003;</span> Works on mobile &amp; desktop</li>
       </ul>
-    
+
       <div class="quote">
-        <strong>🎁 Early Access</strong>
+        <strong><span class="quote-icon">🎁</span> Early Access</strong>
         <p>Join early and get priority support and special launch benefits.</p>
       </div>
     </div>
 
     <!-- Right: Form -->
     <div class="demo-right">
-      <button class="close-btn" (click)="closeDemo()" aria-label="Close">✕</button>
+      <button class="close-btn" (click)="closeDemo()" aria-label="Close">&#10005;</button>
 
+      <!-- Mobile-only header -->
+      <div class="mobile-header">
+        <div class="mobile-badge"><span class="badge-icon">🎁</span> Early Access</div>
+        <h2>Book Your Free Demo</h2>
+        <p>See Zyct live in minutes — no commitment needed.</p>
+        <div class="mobile-trust">
+          <span>✓ No spam</span>
+          <span>✓ Free walkthrough</span>
+          <span>✓ No credit card</span>
+        </div>
+      </div>
+
+      <!-- Desktop heading -->
       <h3>Book Your Free Demo</h3>
-      <p class="form-subtitle">No spam. We’ll only contact you about Zyct.</p>
+      <p class="form-subtitle">No spam. We&apos;ll only contact you about Zyct.</p>
 
       <form #demoForm="ngForm" (ngSubmit)="sendDemoRequest(demoForm)">
 
         <div class="form-group">
-          <input
-            type="text"
-            placeholder="Full Name"
-            [(ngModel)]="formData.name"
-            name="name"
-            required
-            #name="ngModel"
-          />
+          <span class="field-icon">👤</span>
+          <input type="text" placeholder="Full Name"
+            [(ngModel)]="formData.name" name="name" required #name="ngModel" />
           <div class="error" *ngIf="name.invalid && (name.touched || demoForm.submitted)">
             Full name is required
           </div>
         </div>
 
         <div class="form-group">
-          <input
-            type="email"
-            placeholder="Email Address"
-            [(ngModel)]="formData.email"
-            name="email"
-            required
-            email
-            #email="ngModel"
-          />
+          <span class="field-icon">✉️</span>
+          <input type="email" placeholder="Email Address"
+            [(ngModel)]="formData.email" name="email" required email #email="ngModel" />
           <div class="error" *ngIf="email.invalid && (email.touched || demoForm.submitted)">
             Please enter a valid email
           </div>
         </div>
 
         <div class="form-group">
-          <input
-            type="text"
-            placeholder="Phone Number"
-            [(ngModel)]="formData.phone"
-            name="phone"
-            required
-            minlength="8"
-            #phone="ngModel"
-          />
+          <span class="field-icon">📞</span>
+          <input type="text" placeholder="Phone Number"
+            [(ngModel)]="formData.phone" name="phone" required minlength="8" #phone="ngModel" />
           <div class="error" *ngIf="phone.invalid && (phone.touched || demoForm.submitted)">
             Please enter a valid phone number
           </div>
         </div>
 
         <div class="form-group">
-          <input
-            type="text"
-            placeholder="Gym / Company Name"
-            [(ngModel)]="formData.company"
-            name="company"
-            required
-            #company="ngModel"
-          />
+          <span class="field-icon">🏋️</span>
+          <input type="text" placeholder="Gym / Company Name"
+            [(ngModel)]="formData.company" name="company" required #company="ngModel" />
           <div class="error" *ngIf="company.invalid && (company.touched || demoForm.submitted)">
             Company / Gym name is required
           </div>
         </div>
 
-        <button
-          type="submit"
-          class="btn-primary"
-          [disabled]="loading"
-        >
-          {{ loading ? 'Submitting...' : 'Get Demo' }}
+        <button type="submit" class="btn-primary" [disabled]="loading">
+          {{ loading ? 'Submitting...' : 'Get My Free Demo →' }}
         </button>
 
       </form>
-    </div>
 
+      <!-- Mobile-only footer -->
+      <div class="mobile-footer-trust">
+        <span><span class="trust-icon">🔒</span> Secure &amp; private</span>
+        <span><span class="trust-icon">⚡</span> Takes 2 minutes</span>
+      </div>
+
+    </div>
   </div>
 </div>
